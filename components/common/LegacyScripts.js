@@ -43,6 +43,7 @@ function prepareAosElements() {
 
 function refreshAnimations() {
   window.initRevealAnimations?.();
+  window.initGalleryPopups?.();
   window.ScrollTrigger?.refresh();
 
   prepareAosElements();

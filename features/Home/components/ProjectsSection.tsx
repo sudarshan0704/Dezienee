@@ -2,14 +2,9 @@
 
 import ProjectCard from "@/components/common/ProjectCard";
 import { useState } from "react";
+import { projectDetails } from "@/data/projects/test-project-detail";
 
 const filters = ["all", "architecture", "interior", "bedroom", "furniture", "kitchen"];
-const projects = [
-  { image: "project-1.jpg", category: "residential spaces", title: "urban retreat: modern design meets comfort", filters: "architecture bedroom" },
-  { image: "project-2.jpg", category: "luxury homes", title: "luxurious loft: industrial chic for living", filters: "interior kitchen" },
-  { image: "project-3.jpg", category: "outdoor living spaces", title: "coastal vibes: serenity by the sea", filters: "furniture architecture" },
-  { image: "project-4.jpg", category: "modern designs", title: "minimalist haven: simple, clean, inviting spaces", filters: "kitchen bedroom" },
-];
 
 export default function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -54,15 +49,16 @@ export default function ProjectsSection() {
           </div>
           <div className="col-lg-12">
             <div className="row project-item-boxes align-items-center" id="project-grid">
-              {projects.map((project, index) => (
+              {projectDetails.slice(0, 4).map((project, index) => (
                 <ProjectCard
                   key={project.image}
                   image={`/images/${project.image}`}
                   category={project.category}
                   title={project.title}
-                  categories={project.filters.split(" ")}
+                  categories={project.filters}
+                  href={`/projects/${project.slug}`}
                   delay={`${index * 0.2}s`}
-                  hidden={activeFilter !== "all" && !project.filters.split(" ").includes(activeFilter)}
+                  hidden={activeFilter !== "all" && !project.filters.includes(activeFilter)}
                 />
               ))}
             </div>

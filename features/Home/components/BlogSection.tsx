@@ -1,11 +1,6 @@
 import Link from "next/link";
 import BlogCard from "@/components/common/BlogCard";
-
-const posts = [
-  { image: "post-1.jpg", title: "How Does One Go About Buying Furniture?" },
-  { image: "post-2.jpg", title: "Innovative Décor Ideas Shaping Homes Today" },
-  { image: "post-3.jpg", title: "Design Industry Updates You Should Know About" },
-];
+import { blogPosts } from "@/data/blog/posts";
 
 export default function BlogSection() {
   return (
@@ -25,11 +20,12 @@ export default function BlogSection() {
           </div>
         </div>
         <div className="row">
-          {posts.map((post, index) => (
+          {blogPosts.slice(0, 3).map((post, index) => (
             <BlogCard
               key={post.image}
               image={`/images/${post.image}`}
               title={post.title}
+              href={`/blog/${post.slug}`}
               delay={`${index * 0.2}s`}
             />
           ))}

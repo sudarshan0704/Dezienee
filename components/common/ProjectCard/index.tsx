@@ -6,7 +6,7 @@ type ProjectCardProps = {
   category: string;
   title: string;
   categories?: string[];
-  href?: string;
+  href: string;
   delay?: string;
   columnClassName?: string;
   hidden?: boolean;
@@ -17,7 +17,7 @@ export default function ProjectCard({
   category,
   title,
   categories = [],
-  href = "/project-single",
+  href,
   delay = "0s",
   columnClassName = "col-md-6",
   hidden = false,

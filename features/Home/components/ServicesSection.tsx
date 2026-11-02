@@ -1,11 +1,6 @@
 import Link from "next/link";
 import ServiceCard from "@/components/common/ServiceCard";
-
-const services = [
-  { image: "service-1.jpg", title: "residential interior design", description: "We create personalized living spaces that reflect your style and functional needs." },
-  { image: "service-2.jpg", title: "commercial interior design", description: "Enhancing business environments with professional, functional, and aesthetic design." },
-  { image: "service-3.jpg", title: "furniture and decor selection", description: "Our experts help you choose the perfect furniture and decor to complement your style." },
-];
+import { serviceDetails } from "@/data/services/test-service-detail";
 
 export default function ServicesSection() {
   return (
@@ -25,12 +20,13 @@ export default function ServicesSection() {
           </div>
         </div>
         <div className="row">
-          {services.map((service, index) => (
+          {serviceDetails.slice(0, 3).map((service, index) => (
             <ServiceCard
               key={service.title}
               image={`/images/${service.image}`}
               title={service.title}
               description={service.description}
+              href={`/services/${service.slug}`}
               delay={`${index * 0.2}s`}
             />
           ))}

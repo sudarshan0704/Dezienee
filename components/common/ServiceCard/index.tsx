@@ -14,7 +14,7 @@ export default function ServiceCard({
   image,
   title,
   description,
-  href = "/service-single",
+  href = "/services/residential-interior-design",
   delay = "0s",
   columnClassName = "col-lg-4 col-md-6",
 }: ServiceCardProps) {

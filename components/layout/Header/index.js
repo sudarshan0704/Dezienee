@@ -6,6 +6,7 @@ const navigation = [
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Blog", href: "/blog" },
   { label: "Contact Us", href: "/contact" },
 ];

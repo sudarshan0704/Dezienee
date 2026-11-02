@@ -3089,6 +3089,17 @@ header.main-header .header-sticky.active .navbar{
 	transition: all 0.3s ease-in-out;
 }
 
+.post-tags .tag-links .post-tag{
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    background: var(--accent-color);
+    color: var(--white-color);
+	border-radius: 0;
+    padding: 6px 20px;
+}
+
 .post-tags .tag-links a:hover{
 	background: var(--primary-color);
 }

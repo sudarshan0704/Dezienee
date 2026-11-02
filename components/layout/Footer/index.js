@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { companyContact } from "@/data/company/contact";
 
 const informationLinks = [
   ["About our company", "/about"],
@@ -51,7 +52,8 @@ export default function Footer() {
                 {informationLinks.map(([label, href]) => (
                   <li key={href}><Link href={href}>{label}</Link></li>
                 ))}
-                <li><a href="mailto:careers@dezinee.com">Careers at Dezinee</a></li>
+                <li><Link href="/gallery">Gallery</Link></li>
+                <li><Link href="/faqs">FAQs</Link></li>
               </ul>
             </div>
           </div>
@@ -72,15 +74,15 @@ export default function Footer() {
               <h3>Contact us</h3>
               <div className="footer-contact-item">
                 <div className="icon-box"><i className="fa-solid fa-phone" /></div>
-                <div className="footer-contact-content"><a href="tel:+1213465789">+1 (213) 465 789</a></div>
+                <div className="footer-contact-content"><a href={`tel:${companyContact.phoneHref}`}>{companyContact.phone}</a></div>
               </div>
               <div className="footer-contact-item">
                 <div className="icon-box"><i className="fa-solid fa-envelope" /></div>
-                <div className="footer-contact-content"><a href="mailto:info@domain.com">info@domain.com</a></div>
+                <div className="footer-contact-content"><a href={`mailto:${companyContact.email}`}>{companyContact.email}</a></div>
               </div>
               <div className="footer-contact-item">
                 <div className="icon-box"><i className="fa-solid fa-location-dot" /></div>
-                <div className="footer-contact-content"><p>Generała Ziętka Jerzego 54, Mysłowice 41-412</p></div>
+                <div className="footer-contact-content"><p>{companyContact.location}</p></div>
               </div>
             </div>
           </div>

@@ -261,26 +261,31 @@
 	}
 
 	/* Zoom Gallery screenshot */
-	$('.gallery-items').magnificPopup({
-		delegate: 'a',
-		type: 'image',
-		closeOnContentClick: false,
-		closeBtnInside: false,
-		mainClass: 'mfp-with-zoom',
-		image: {
-			verticalFit: true,
-		},
-		gallery: {
-			enabled: true
-		},
-		zoom: {
-			enabled: true,
-			duration: 300, // don't foget to change the duration also in CSS
-			opener: function(element) {
-			  return element.find('img');
-			}
-		}
-	});
+	window.initGalleryPopups = function() {
+		$('.gallery-items').each(function() {
+			$(this).magnificPopup({
+				delegate: 'a',
+				type: 'image',
+				closeOnContentClick: false,
+				closeBtnInside: false,
+				mainClass: 'mfp-with-zoom',
+				image: {
+					verticalFit: true,
+				},
+				gallery: {
+					enabled: true
+				},
+				zoom: {
+					enabled: true,
+					duration: 300,
+					opener: function(element) {
+					  return element.find('img');
+					}
+				}
+			});
+		});
+	};
+	window.initGalleryPopups();
 
 	/* Contact form validation */
 	var $contactform = $("#contactForm");

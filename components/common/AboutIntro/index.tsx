@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { companyContact, founderName } from "@/data/company/contact";
 
 const facilities = [
   { icon: "icon-about-facility-1.svg", title: "reasonable prices", text: "We produce furniture to fulfill the needs of all people and offer it at affordable prices." },
@@ -43,8 +44,8 @@ export default function AboutIntro({ variant }: AboutIntroProps) {
                   </div>
                 </div>
                 <div className="about-us-contact-list">
-                  <div className="about-contact-item wow fadeInUp" data-wow-delay="0.4s"><div className="icon-box"><i className="fa-solid fa-phone" /></div><div className="about-contact-content"><p>need any help?</p><h3><a href="tel:+1235800999">+(1) 235 800 999</a></h3></div></div>
-                  <div className="about-contact-item wow fadeInUp" data-wow-delay="0.6s"><div className="icon-box"><figure className="image-anime"><Image src="/images/author-1.jpg" alt="Leslie Alexander, co-founder" width={100} height={100} /></figure></div><div className="about-contact-content"><h3>leslie alexander</h3><p>co founder</p></div></div>
+                  <div className="about-contact-item wow fadeInUp" data-wow-delay="0.4s"><div className="icon-box"><i className="fa-solid fa-phone" /></div><div className="about-contact-content"><p>need any help?</p><h3><a href={`tel:${companyContact.phoneHref}`}>{companyContact.phone}</a></h3></div></div>
+                  <div className="about-contact-item wow fadeInUp" data-wow-delay="0.6s"><div className="icon-box"><figure className="image-anime"><Image src="/images/author-1.jpg" alt={`${founderName}, founder`} width={100} height={100} /></figure></div><div className="about-contact-content"><h3>{founderName}</h3><p>Founder</p></div></div>
                 </div>
               </div>
             </div>

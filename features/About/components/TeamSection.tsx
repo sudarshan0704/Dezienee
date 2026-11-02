@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { founderName } from "@/data/company/contact";
 
 const team = [
-  { image: "team-1.jpg", name: "harry r. blackston", role: "co-founder & CEO" },
+  { image: "team-1.jpg", name: founderName, role: "Founder" },
   { image: "team-2.jpg", name: "alexa brook", role: "human resources manager" },
   { image: "team-3.jpg", name: "suzen hilly", role: "civil engineering" },
 ];
